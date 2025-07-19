@@ -5,6 +5,7 @@
     /// </summary>
     public class AppTask
     {
+        #region Properties
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
@@ -19,7 +20,7 @@
         /// <value>
         /// The title.
         /// </value>
-        public required string Description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or sets the status.
@@ -27,7 +28,7 @@
         /// <value>
         /// The status.
         /// </value>
-        public TaskStatus Status { get; set; }
+        public AppTaskStatus Status { get; set; }
 
         /// <summary>
         /// Gets or sets the created at.
@@ -43,5 +44,21 @@
         /// The updated at.
         /// </value>
         public DateTime UpdatedAt { get; set; }
+        #endregion
+
+        #region Constructor        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppTask"/> class.
+        /// </summary>
+        /// <param name="description">The description.</param>
+        public AppTask(string description)
+        {
+            Id = Guid.NewGuid();
+            Description = description;
+            Status = AppTaskStatus.ToDo;
+            CreatedAt = DateTime.UtcNow;
+            UpdatedAt = DateTime.UtcNow;
+        }
+        #endregion
     }
 }

@@ -8,11 +8,10 @@ namespace Task_Tracker_CLI.Application
     public interface ITaskService
     {
         /// <summary>
-        /// Creates the task.
+        /// Adds the task.
         /// </summary>
-        /// <param name="task">The task.</param>
-        /// <returns></returns>
-        void CreateTask(AppTask task);
+        /// <param name="description">The description.</param>
+        void AddTask(string description);
 
         /// <summary>
         /// Gets all tasks.
@@ -21,18 +20,24 @@ namespace Task_Tracker_CLI.Application
         List<AppTask> GetAllTasks();
 
         /// <summary>
-        /// Gets the appby identifier.
+        /// Gets all tasks based on a given status.
         /// </summary>
-        /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        AppTask GetAppbyID(Guid id);
+        List<AppTask> GetAllTasks(AppTaskStatus status);
 
         /// <summary>
-        /// Updates the task.
+        /// Updates the task description.
         /// </summary>
-        /// <param name="task">The task.</param>
-        /// <returns></returns>
-        void UpdateTask(AppTask task);
+        /// <param name="id">The identifier.</param>
+        /// <param name="description">The description.</param>
+        void UpdateTask(Guid id, string description);
+
+        /// <summary>
+        /// Updates the task status.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="description">The description.</param>
+        void UpdateTask(Guid id, AppTaskStatus status);
 
         /// <summary>
         /// Deletes the task.

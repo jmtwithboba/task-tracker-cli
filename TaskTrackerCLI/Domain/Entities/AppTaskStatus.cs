@@ -3,7 +3,7 @@
     /// <summary>
     /// These are the available statuses for the tasks.
     /// </summary>
-    public enum TaskStatus
+    public enum AppTaskStatus
     {
         /// <summary>
         /// The task has not been started.
@@ -18,6 +18,6 @@
         /// <summary>
         /// The task is completed.
         /// </summary>
-        Completed = 3
+        Done = 3
     }
 }
